@@ -30,10 +30,8 @@ public class RunnerBase{
 			
 			switch(input.nextInt()) {
 			case(1): 
-				input.close();
 				return true;
 			default:
-				input.close();
 				return false;
 			}
 		}
@@ -55,8 +53,6 @@ public class RunnerBase{
 		String name = input.nextLine();
 		printSlow("\n\nOh... ",200); printSlow(name + " Huh.. Doesn't Really Sound Like A Champion",100);
 		//Make this sound more interesting
-		
-		input.close();
 	}
 	
 	public static void printSlow(String input,int speed){
