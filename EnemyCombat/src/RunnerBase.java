@@ -2,11 +2,11 @@ import java.util.Scanner;
 import static java.lang.System.*;
 public class RunnerBase{
   
-	public static void main(String[] args) throws InterruptedException{
+	public static void main(String[] args){
 		runGame();
 	}
 	
-	public static void runGame() throws InterruptedException{	
+	public static void runGame(){	
 		boolean Play = printStart();
 		
 		if(Play)
@@ -14,30 +14,33 @@ public class RunnerBase{
 		
 	}
 	
-	public static boolean printStart() throws InterruptedException{
-		Scanner input = new Scanner(System.in);
-		
-		out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
-		Thread.sleep(170);
-		out.println("▲▼▲▼▲▼ ENEMY COMBAT ▼▲▼▲▼▲");
-		Thread.sleep(170);
-		out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼\n");
-		Thread.sleep(170);
-		printSlow("  1 >>	START\n", 100);
-		printSlow("  2 >>	QUIT\n\n", 100);
-		printSlow("  CHOOSE --> ", 100);
-		
-		switch(input.nextInt()) {
-		case(1): 
-			return true;
-		default:
-			return false;
+	public static boolean printStart(){
+		try {	
+			Scanner input = new Scanner(System.in);
+			
+			out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
+			Thread.sleep(170);
+			out.println("▲▼▲▼▲▼ ENEMY COMBAT ▼▲▼▲▼▲");
+			Thread.sleep(170);
+			out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼\n");
+			Thread.sleep(170);
+			printSlow("  1 >>	START\n", 100);
+			printSlow("  2 >>	QUIT\n\n", 100);
+			printSlow("  CHOOSE --> ", 100);
+			
+			switch(input.nextInt()) {
+			case(1): 
+				return true;
+			default:
+				return false;
+			}
 		}
-		
-		
+		catch(InterruptedException e) {
+			out.println("#### TIMING ERROR ####");
+			return false;		}
 	}
 	
-	public static void postStartText() throws InterruptedException{
+	public static void postStartText(){
 		
 		out.println("\n\n");
 		
@@ -50,13 +53,17 @@ public class RunnerBase{
 		//Make this sound more interesting
 	}
 	
-	public static void printSlow(String input,int speed) throws InterruptedException{
-		
-		String[] h = input.split("");
-		
-		for(String x: h) {
-			out.print(x);
-			Thread.sleep(speed);
+	public static void printSlow(String input,int speed){
+		try {
+			String[] h = input.split("");
+			
+			for(String x: h) {
+				out.print(x);
+				Thread.sleep(speed);
+			}
+		}
+		catch(InterruptedException e) {
+			out.println("#### TIMING ERROR ####");
 		}
 	}
 }
