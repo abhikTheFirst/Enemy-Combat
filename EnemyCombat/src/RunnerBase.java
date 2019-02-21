@@ -52,8 +52,7 @@ public class RunnerBase{
 		printSlow("Hello! Welcome To Enemy Combat!\n\n",100);
 		printSlow("What Is The Name Of Your Champion --> ",100);
 		String name = input.nextLine();
-		printSlow("\n\nOh... ",200); printSlow(name + " Huh.. Doesn't Really Sound Like A Champion",100);
-		//Make this sound more interesting
+		printSlow("\n\n",200); printSlow(name + "! What A Stupid Name!",100);
 	}
 	
 	public static void printSlow(String input,int speed){
