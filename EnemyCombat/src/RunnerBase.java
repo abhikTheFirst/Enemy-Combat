@@ -11,7 +11,6 @@ public class RunnerBase{
 		
 		if(Play)
 			postStartText();
-		
 	}
 	
 	public static boolean printStart(){
