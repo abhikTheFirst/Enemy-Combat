@@ -12,10 +12,10 @@ public class RunnerBase{
 		
 		if(Play)
 			postStartText();
-		
 	}
 	
 	public static boolean printStart(){
+<<<<<<< HEAD
 		try {
 			Scanner input = new Scanner(System.in);
 			
@@ -39,8 +39,35 @@ public class RunnerBase{
 		catch(InterruptedException e) {
 			out.println("#### TIMING ERROR ####");
 			return false;
+=======
+		try {	
+			Scanner input = new Scanner(System.in);
+			
+			out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
+			Thread.sleep(170);
+			out.println("▲▼▲▼▲▼ ENEMY COMBAT ▼▲▼▲▼▲");
+			Thread.sleep(170);
+			out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼\n");
+			Thread.sleep(170);
+			printSlow("  1 >>	START\n", 100);
+			printSlow("  2 >>	QUIT\n\n", 100);
+			printSlow("  CHOOSE --> ", 100);
+			
+			switch(input.nextInt()) {
+			case(1): 
+				return true;
+			default:
+				return false;
+			}
+>>>>>>> refs/remotes/origin/Runner
 		}
+<<<<<<< HEAD
 		
+=======
+		catch(InterruptedException e) {
+			out.println("#### TIMING ERROR ####");
+			return false;		}
+>>>>>>> refs/remotes/origin/Runner
 	}
 	
 	public static void postStartText(){
@@ -65,7 +92,11 @@ public class RunnerBase{
 				Thread.sleep(speed);
 			}
 		}
+<<<<<<< HEAD
 		catch(InterruptedException e){
+=======
+		catch(InterruptedException e) {
+>>>>>>> refs/remotes/origin/Runner
 			out.println("#### TIMING ERROR ####");
 		}
 	}
