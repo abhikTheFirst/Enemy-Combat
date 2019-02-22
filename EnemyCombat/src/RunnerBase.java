@@ -33,6 +33,7 @@ public class RunnerBase{
 			case(1): 
 				return true;
 			default:
+				out.println("\n<< GOODBYE. >>");
 				return false;
 			}
 		}
