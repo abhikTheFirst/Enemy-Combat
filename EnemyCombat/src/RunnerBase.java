@@ -18,7 +18,7 @@ public class RunnerBase{
 	public static boolean printStart(){
 		try {
 			Scanner input = new Scanner(System.in);
-			
+			newScreen();
 			out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
 			Thread.sleep(170);
 			out.println("▲▼▲▼▲▼ ENEMY COMBAT ▼▲▼▲▼▲");
@@ -45,7 +45,7 @@ public class RunnerBase{
 	
 	public static void postStartText(){
 		
-		out.println("\n\n");
+		newScreen();
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -67,5 +67,11 @@ public class RunnerBase{
 		catch(InterruptedException e){
 			out.println("#### TIMING ERROR ####");
 		}
+	}
+	public static void newScreen() {
+		out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		
 	}
 }
