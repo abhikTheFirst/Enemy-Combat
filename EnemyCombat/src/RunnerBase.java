@@ -41,7 +41,6 @@ public class RunnerBase{
 			out.println("#### TIMING ERROR ####");
 			return false;
 		}
-		
 	}
 	
 	public static void postStartText(){
@@ -53,7 +52,7 @@ public class RunnerBase{
 		printSlow("Hello! Welcome To Enemy Combat!\n\n",100);
 		printSlow("What Is The Name Of Your Champion --> ",100);
 		String name = input.nextLine();
-		printSlow("\n\n",100); printSlow(name + "! What A Stupid Name!",100);
+		printSlow("\n\n",100); printSlow(name + "! What A Stupid Name!\n\n",100);
 	}
 	
 	public static void printSlow(String input,int speed){
