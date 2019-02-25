@@ -1,5 +1,3 @@
-package EnemyCombat.src;
-
 import java.util.Scanner;
 import static java.lang.System.*;
 
@@ -26,9 +24,9 @@ public class RunnerBase{
 			Thread.sleep(170);
 			out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼\n");
 			Thread.sleep(170);
-			printSlow("  1 >>	START\n", 100);
-			printSlow("  2 >>	QUIT\n\n", 100);
-			printSlow("  CHOOSE --> ", 100);
+			printSlow("  1 >>	START\n", 80);
+			printSlow("  2 >>	QUIT\n\n", 80);
+			printSlow("  CHOOSE --> ", 80);
 			
 			switch(input.nextInt()) {
 			case(1): 
@@ -50,10 +48,10 @@ public class RunnerBase{
 		
 		Scanner input = new Scanner(System.in);
 		
-		printSlow("Hello! Welcome To Enemy Combat!\n\n",100);
-		printSlow("What Is The Name Of Your Champion --> ",100);
+		printSlow("Hello! Welcome To Enemy Combat!\n\n",80);
+		printSlow("What Is The Name Of Your Champion --> ",80);
 		String name = input.nextLine();
-		printSlow("\n\n",100); printSlow(name + "! What A Stupid Name!\n\n",100);
+		printSlow("\n\n",100); printSlow(name + "! What A Stupid Name!\n\n",80);
 	}
 	
 	public static void printSlow(String input,int speed){
