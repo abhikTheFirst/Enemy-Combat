@@ -5,14 +5,12 @@ public class Character{
   private int currHealth;
   private int health;
   private int lvl;
-  private Item[] items;
   
-  public Character(String n, int c, int h, int l, Item[] i){
+  public Character(String n, int c, int h, int l){
 	  name=n;
 	  currHealth=c;
 	  health=h;
 	  lvl=l;
-	  items=i;
   }
   public String getName(){
 	  return(name);
@@ -26,8 +24,8 @@ public class Character{
   public int getLvl(){
 	  return(lvl);
   }
-  public Item[] getItems() {
-	  return(items);
+  public [] gets() {
+	  return(s);
   }
   public void setName(String n){
 	  name=n;
@@ -41,10 +39,7 @@ public class Character{
   public void setLvl(int l){
 	  lvl=l;
   }
-  public void setItems(Item[] i){
-	  items=i;
-  }
   public String toString(){
-	  return(name+" is level "+lvl+" and has "+currHealth+" of "+health+" health remaining.\nThey inventory is:"Arrays.deepToString(items));
+	  return(name+" is level "+lvl+" and has "+currHealth+" of "+health+" health remaining");
   }
 }

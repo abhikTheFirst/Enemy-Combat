@@ -3,14 +3,14 @@ public class Hero extends Character{
 	private int health;
 	private ArrayList<itemBase> inventory;
 	private Weapon activeWeapon;
-	private Armor activeArmor;
+	//private Armor activeArmor;
 	
 	public Hero(String n, int h) {
-		super(n,h);
+		super(n,h,h,1);
 		activeWeapon = new Weapon("Stick",1);
 		activeArmor = new Armor("Leather",1);
 		inventory = new ArrayList<itemBase>();
-		inventory.add(activeWeapon);inventory.add(activeArmor);
+		inventory.add(activeWeapon);//inventory.add(activeArmor);
 	}
 	public ArrayLisy<itemBase> getInv(){
 		return inventory;
@@ -20,7 +20,7 @@ public class Hero extends Character{
 			inventory.add(sub)
 		}
 		else{
-			inventory.remove(indexOf(n));
+			inventory.remove(indexOf(sub));
 		}
 	}
 	//currently has the skeletal versions of updating inventory functions, needs itemBase to be instantiated/extended/implemented or whatever
