@@ -3,8 +3,11 @@ import static java.lang.System.*;
 
 public class RunnerBase{
   
+	private static Scanner input;
+	
 	public static void main(String[] args){
 		runGame();
+		input.close();
 	}
 	
 	public static void runGame(){	
@@ -16,7 +19,7 @@ public class RunnerBase{
 	
 	public static boolean printStart(){
 		try {
-			Scanner input = new Scanner(System.in);
+			input = new Scanner(System.in);
 			newScreen();
 			out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
 			Thread.sleep(170);
@@ -46,7 +49,7 @@ public class RunnerBase{
 		
 		newScreen();
 		
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 		
 		printSlow("Hello! Welcome To Enemy Combat!\n\n",80);
 		printSlow("What Is The Name Of Your Champion --> ",80);
