@@ -7,7 +7,6 @@ public class RunnerBase{
 	
 	public static void main(String[] args){
 		runGame();
-		
 		input.close();
 	}
 	
