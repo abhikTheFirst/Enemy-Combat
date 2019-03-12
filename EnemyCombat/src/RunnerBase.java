@@ -6,6 +6,8 @@ public class RunnerBase{
 	private static Scanner input = new Scanner(System.in);
 	
 	// MAKE SURE TO IMPLEMENT SCANNER EXCEPTIONS
+	private static String[] classNames;
+	private static String[] flavorTexts;
 	
 	public static void main(String[] args){
 		runGame();
@@ -44,38 +46,42 @@ public class RunnerBase{
 	
 	public static void postStartText(){
 		newScreen();
-		String[] classNames = {"Warrior", "Archer", "Mage"};
 		
 		printSlow("Hello! Welcome To Enemy Combat!\n\n",80);
 		printSlow("What Is Your Name --> ",80);
-		String name = input.nextLine();
-		printSlow("\n\n",100); printSlow(name + "! What A Stupid Name!\n\n",80);
+		String playerName = input.nextLine();
+		printSlow("\n\n",100); printSlow(playerName + "! What A Stupid Name!\n\n",80);
 		printSlow("Now, What Is Your Fighting Style?\n", 80);
+		classSelect(classNames, flavorTexts, playerName);
 		
 	}
-	public static String classSelect(String[] classNames, String name) { // will return Character
+	
+	public static String classSelect(String[] cNames, String[] fTexts, String pName) { // will return Character
 		for(int i = 1; i < classNames.length + 1; i++) {
 			out.println("\t" + i + "  " + classNames[i-1]);
 			wait(170);
 		}
 		out.print("CHOOSE --> ");
 		int choose = input.nextInt();
-		Character player;
 		
-		switch(choose) {
-		case 1:
-			//player = new Character(name,classNames[choose - 1]);
-			break;
-		case 2:
-			//player = new Character(name,classNames[choose - 1]);
-			break;
-		case 3:
-			//player = new Character(name,classNames[choose - 1]);
-			break;
-		default:
-			newScreen();
-			return classSelect(classNames, name);
+		newScreen();
+		out.println("\n" + classNames[choose] + ": " + flavorTexts[choose]);
+		
+		out.println("Are You Sure: Y/N");
+		out.print("CHOOSE --> ");
+		String ans = input.next();
+		
+		if(ans.equals("Y") || ans.equals("y")) {
+			
 		}
+		else {
+			
+		}
+		
+		//  in case of input exceptions
+		//	newScreen();
+		//  out.println("Choose Your Fighting Style -->");
+		//	return classSelect(classNames, name);
 		
 		//return player;
 		return ""; // fake!
