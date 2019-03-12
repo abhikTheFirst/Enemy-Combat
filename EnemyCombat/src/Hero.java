@@ -1,12 +1,16 @@
+import java.util.ArrayList;
+
 public class Hero extends Character{
 	private String name;
 	private int health;
+	private int currHealth;
+	private int lvl;
 	private ArrayList<itemBase> inventory;
 	private Weapon activeWeapon;
 	//private Armor activeArmor;
 	
-	public Hero(String n, int h) {
-		super(n,h,h,1);
+	public Hero(String n, int h,int ch) {
+		super(n,h,ch,1);
 		activeWeapon = new Weapon("Stick",1);
 		//activeArmor = new Armor("Leather",1);
 		inventory = new ArrayList<itemBase>();
@@ -24,7 +28,31 @@ public class Hero extends Character{
 		}
 	}
 	
-	public void updateWeapon(int pos) {
+	public int getHealth() {
+		return health;
+	}
+	public void setHealth(int health) {
+		this.health = health;
+	}
+	public int getCurrHealth() {
+		return currHealth;
+	}
+	public void setCurrHealth(int currHealth) {
+		this.currHealth = currHealth;
+	}
+	public int getLvl() {
+		return lvl;
+	}
+	public void setLvl(int lvl) {
+		this.lvl = lvl;
+	}
+	public ArrayList<itemBase> getInventory() {
+		return inventory;
+	}
+	public void setInventory(ArrayList<itemBase> inventory) {
+		this.inventory = inventory;
+	}
+	public void updateWeapon(int pos) throws IndexOutOfBoundsException {
 		if(inventory.get(pos) instanceof Weapon)) {
 			activeWeapon = inventory(pos).get();
 		}

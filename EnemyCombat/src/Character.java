@@ -1,15 +1,14 @@
 import java.util.Arrays;
-
 public class Character{
 	private String name;
 	private int currHealth;
 	private int health;
 	private int lvl;
   
-	public Character(String n, int c, int h, int l){
+	public Character(String n, int h, int ch, int l){
 		name=n;
-		currHealth=c;
-	  	health=h;
+		health=h;
+		currHealth=ch;
 	   	lvl=l;
 	}
 	public String getName(){
