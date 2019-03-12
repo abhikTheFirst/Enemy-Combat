@@ -1,4 +1,4 @@
-public abstract class Item {
+public abstract class Item implements Sellable {
 	/*
 	 * All items have a name, rarity, and amount of uses (consumables like brews have one use, but
 	 * weapons can be used multiple times before they break, like Breath of the Wild. If selling

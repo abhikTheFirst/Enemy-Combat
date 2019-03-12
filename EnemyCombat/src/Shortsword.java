@@ -22,7 +22,7 @@ public class Shortsword extends Weapon {
 			case "Mythic":
 				rarValue = 1.5;
 				break;
-			default:
+			default: // Add other types of rarities for more diverse selling
 				rarValue = 1;
 				break;
 		}

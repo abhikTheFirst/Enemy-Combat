@@ -1,11 +1,11 @@
-public abstract class Weapon extends Item {
+public abstract class Weapon extends Item implements Modifiable {
 	private double baseDamage;
 	private Modifier mod;
-	private int criticalChance;
+	private int criticalChance, randomIndex;
 	public Weapon(String n, String r, int u, int w, double bD, int c) {
 		super(n, r, u, w);
 		baseDamage = bD;
-		mod = new Modifier();
+		randomIndex = (int)(Math.random() * POSSIBLE_MODIFIER_EFFECTS.length);
 		criticalChance = c;
 	}
 	public String getName() {
@@ -34,5 +34,11 @@ public abstract class Weapon extends Item {
 	}
 	public void setModifier(Modifier m) {
 		mod = m;
+	}
+	public String getModifierDescription() {
+		return "a";
+	}
+	public void test() {
+		System.out.println(POSSIBLE_MODIFIER_NAMES[0]);
 	}
 }
