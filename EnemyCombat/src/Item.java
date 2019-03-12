@@ -1,3 +1,4 @@
+
 public abstract class Item implements Sellable {
 	/*
 	 * All items have a name, rarity, and amount of uses (consumables like brews have one use, but

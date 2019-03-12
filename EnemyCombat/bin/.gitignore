@@ -1,7 +1,9 @@
-/Shortsword.class
 /Brew.class
-/MeleeWeapon.class
-/RangedWeapon.class
+/Item.class
+/ItemBase.class
 /Modifiable.class
+/Modifier.class
 /Sellable.class
-/backups/
+/Shortsword.class
+/Test.class
+/Weapon.class
