@@ -2,6 +2,9 @@ public class ItemBase{
 private double lootChance;
 private int value;
 private String name;
+private int minNum;
+private int maxNum;
+
   public double getLootChance()
   {
     return lootChance;
@@ -27,8 +30,28 @@ private String name;
     return name;
   }
 
-  public vod setName()
+  public void setName()
   {
     name = n;
+  }
+
+  public int getMinNum()
+  {
+    return minNum;
+  }
+
+  public void setMinNum(int m)
+  {
+    minNum = m;
+  }
+
+  public int getMaxNum()
+  {
+    return maxNum;
+  }
+
+  public void setMaxNum(int m)
+  {
+    maxNum = m;
   }
 }
