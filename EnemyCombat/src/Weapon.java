@@ -1,4 +1,5 @@
 
+
 public abstract class Weapon extends Item implements Modifiable {
 	private double baseDamage;
 	private Modifier mod;

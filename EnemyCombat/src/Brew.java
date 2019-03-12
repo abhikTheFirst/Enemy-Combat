@@ -1,4 +1,5 @@
 
+
 public abstract class Brew extends Item {
 	/*
 	 * Brews have a duration (in turns or attacks) and a potency (in percent) for their effect.

@@ -1,4 +1,5 @@
 
+
 public class Shortsword extends Weapon {
 	/* 
 	 * Shortswords are the most basic of weapons. Their sell prices are low.
