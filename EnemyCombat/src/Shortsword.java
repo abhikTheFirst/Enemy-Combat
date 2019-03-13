@@ -1,16 +1,17 @@
-
-
 public class Shortsword extends Weapon {
 	/* 
 	 * Shortswords are the most basic of weapons. Their sell prices are low.
 	 * Think of more characteristics of shortswords here (for instance variables):
 	 * 
+	 * NOTE: This class is to be scrapped and replaced for a refurbished "MeleeWeapon" class, as
+	 * shortswords are too specific for a simple game and don't have any different characteristics
+	 * from other melee weapons (for now)
 	 */
-	public Shortsword(String n, String r, int u, int w, double bD, int c) {
-		super(n, r, u, w, bD, c);
+	public Shortsword(String n, String r, int u, int w, double bD, int c, int l) {
+		super(n, r, u, w, bD, c, l);
 	}
 	public String getItemDescription() {
-		return "Shortsword";
+		return "Basic melee weapon";
 	}
 	public int getSellPrice() {
 		double rarValue;
@@ -28,6 +29,6 @@ public class Shortsword extends Weapon {
 				rarValue = 1;
 				break;
 		}
-		return 200 + (int)(5 * super.getModifier().getModifierEffect() * rarValue);
+		return 200 + (int)(5 * super.getModifierEffect() * rarValue); // 200 is default value for shortsword, can fluctuate based on type of weapon/how good it is
 	}
 }

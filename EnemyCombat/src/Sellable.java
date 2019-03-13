@@ -1,5 +1,3 @@
-
-
 public interface Sellable {
-	int getSellPrice();
+	public abstract int getSellPrice();
 }

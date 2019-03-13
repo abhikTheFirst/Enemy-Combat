@@ -1,26 +1,23 @@
-
-
-public abstract class Weapon extends Item implements Modifiable {
+public abstract class Weapon extends Item implements Modifiable, Sellable {
 	private double baseDamage;
-	private Modifier mod;
-	private int criticalChance, randomIndex;
-	public Weapon(String n, String r, int u, int w, double bD, int c) {
-		super(n, r, u, w);
+	private int criticalChance, randomIndex, modifierEffect;
+	public String modifierName;
+	public Weapon(String n, String r, int u, int w, double bD, int c, int l) {
+		super(n, r, u, w, l, 1, 1);
 		baseDamage = bD;
 		randomIndex = (int)(Math.random() * POSSIBLE_MODIFIER_EFFECTS.length);
 		criticalChance = c;
+		modifierName = POSSIBLE_MODIFIER_NAMES[randomIndex];
+		modifierEffect = POSSIBLE_MODIFIER_EFFECTS[randomIndex];
 	}
 	public String getName() {
-		return mod.getModifierName() + " " + super.getName();
+		return modifierEffect + " " + super.getName();
 	}
 	public void reforge() {
-		mod = new Modifier();
+		randomIndex = (int)(Math.random() * POSSIBLE_MODIFIER_EFFECTS.length);
 	}
 	public double getDamage() {
-		return baseDamage + (baseDamage * 0.01 * mod.getModifierEffect());
-	}
-	public Modifier getModifier() {
-		return mod;
+		return baseDamage + (baseDamage * 0.01 * modifierEffect);
 	}
 	public void setBaseDamage(double bD) {
 		baseDamage = bD;
@@ -34,13 +31,19 @@ public abstract class Weapon extends Item implements Modifiable {
 	public int getCriticalChance() {
 		return criticalChance;
 	}
-	public void setModifier(Modifier m) {
-		mod = m;
-	}
 	public String getModifierDescription() {
-		return "a";
+		return modifierName + " weapon: " + modifierEffect + "% damage";
 	}
-	public void test() {
-		System.out.println(POSSIBLE_MODIFIER_NAMES[0]);
+	public void setModifierEffect(int mE) {
+		modifierEffect = mE;
+	}
+	public int getModifierEffect() {
+		return modifierEffect;
+	}
+	public void setModiferName(String mN) { 
+		modifierName = mN;
+	}
+	public String getModifierName() {
+		return modifierName;
 	}
 }
