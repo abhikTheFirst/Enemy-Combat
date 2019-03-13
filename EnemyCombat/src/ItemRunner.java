@@ -13,5 +13,14 @@ public class ItemRunner {
 			System.out.println(x.getItemDescription());
 			System.out.println(((Weapon)(x)).getModifierDescription() + "\n");
 		}
+		System.out.println(i instanceof Shortsword);
+		/*
+		* This is a cool thing I found out. You can test if a reference to an object is a specific object by using the keyword instanceof.
+		* This way there are no runtime errors when, for example, I do a for-each on my inventory and I try to call getModifierDescription() on a Potion or something, because
+		* I'll only call getModifierDescription() when x instanceof Weapon is true.
+		* For example: new Shortsword instanceof Shortsword = true, instanceof Weapon = true, instanceof Item = true, instanceof Potion = false -- this is how instanceof works
+		* I don't know if this is taught in CS3 but I would recommend using it when cycling through the ArrayList of items to make sure that no runtime errors happen
+		* by calling invalid methods. (UNLESS there is a way to make my code better to avoid this then let me know)
+		*/
 	}
 }
