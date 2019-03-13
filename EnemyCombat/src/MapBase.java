@@ -11,12 +11,30 @@ public class MapBase{
 	
 	public static String topMostMenu() {
 		String menu = "";
-		menu += "+-------------------------------------+\n";
-		menu += "| 1. Attack          2. Item          |\n";	
-		menu += "|                                     |\n";	
-		menu += "| 3. Special Attack  4. Other options |\n";	
-		menu += "+-------------------------------------+\n";
+		
+		String[] options = {"Attack", "Items", "Switch", "Run"};
+		
+		for(int i = 0; i < options.length; i += 2) {
+			menu += String.format("%-10s	", i+1 + ". " + options[i]);
+			menu += String.format("%-10s\n", i+2 + ". " + options[i+1]);
+		}
+		menu = "\n" + menu;
+		for(int i = 0; i < 14; i++) {
+			menu = "--" + menu;
+			menu += "--";
+		}	
 		
 		return menu;
 	}
+	
+	public static String listItems(ArrayList<item> list) {
+		String menu = "";
+		
+		for(int i = 0; i < list.size(); i++) {
+			menu += String.format("%-20s	\n", i+1 + ". " + list.get(i).getName());
+		}
+		return menu;
+	}
+	
+	
 }
