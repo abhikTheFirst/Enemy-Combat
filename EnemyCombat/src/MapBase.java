@@ -18,7 +18,7 @@ public class MapBase{
 			menu += String.format("%-10s	", i+1 + ". " + options[i]);
 			menu += String.format("%-10s\n", i+2 + ". " + options[i+1]);
 		}
-		menu = "\n" + menu;
+		menu = "\n" + menu; 
 		for(int i = 0; i < 14; i++) {
 			menu = "--" + menu;
 			menu += "--";
@@ -26,7 +26,7 @@ public class MapBase{
 		
 		return menu;
 	}
-	
+	/*
 	public static String listItems(ArrayList<item> list) {
 		String menu = "";
 		
@@ -35,6 +35,7 @@ public class MapBase{
 		}
 		return menu;
 	}
+	*/
 	
 	
 }
