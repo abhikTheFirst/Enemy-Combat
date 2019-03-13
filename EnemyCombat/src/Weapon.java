@@ -10,9 +10,6 @@ public abstract class Weapon extends Item implements Modifiable, Sellable {
 		modifierName = POSSIBLE_MODIFIER_NAMES[randomIndex];
 		modifierEffect = POSSIBLE_MODIFIER_EFFECTS[randomIndex];
 	}
-	public String getName() {
-		return modifierEffect + " " + super.getName();
-	}
 	public void reforge() {
 		randomIndex = (int)(Math.random() * POSSIBLE_MODIFIER_EFFECTS.length);
 	}
@@ -45,5 +42,10 @@ public abstract class Weapon extends Item implements Modifiable, Sellable {
 	}
 	public String getModifierName() {
 		return modifierName;
+	}
+	public void makeRandomIndeces() { // This method is called by Shortsword when it is instantiated, since Weapon() is never called and never makes the random index unless an actual Weapon is made.
+		randomIndex = (int)(Math.random() * POSSIBLE_MODIFIER_EFFECTS.length);
+		modifierName = POSSIBLE_MODIFIER_NAMES[randomIndex];
+		modifierEffect = POSSIBLE_MODIFIER_EFFECTS[randomIndex];
 	}
 }

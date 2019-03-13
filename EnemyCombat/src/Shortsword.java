@@ -1,4 +1,4 @@
-public class Shortsword extends Weapon {
+public class Shortsword extends Weapon implements Modifiable, Sellable {
 	/* 
 	 * Shortswords are the most basic of weapons. Their sell prices are low.
 	 * Think of more characteristics of shortswords here (for instance variables):
@@ -9,9 +9,10 @@ public class Shortsword extends Weapon {
 	 */
 	public Shortsword(String n, String r, int u, int w, double bD, int c, int l) {
 		super(n, r, u, w, bD, c, l);
+		super.makeRandomIndeces();
 	}
 	public String getItemDescription() {
-		return "Basic melee weapon";
+		return super.getModifierName() + " " + getName() + " (" + super.getRarity() + " item)\nDamage: " + super.getDamage();
 	}
 	public int getSellPrice() {
 		double rarValue;
