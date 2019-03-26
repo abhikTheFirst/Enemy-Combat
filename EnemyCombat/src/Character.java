@@ -33,7 +33,7 @@ public class Character{
 	public void setHealth(int h){
 		health=h;
 	}
-	public void setLvl(int l){
+	public void setLvl(int l){ 
 		lvl=l;
 	}
 	public String toString(){
