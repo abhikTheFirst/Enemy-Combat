@@ -21,11 +21,11 @@ public class Hero extends Character{
 	}
 	public void updateInv(boolean addOrLose,itemBase sub) {
 		if(addOrLose) {
-			if(inventory.size()>=50)
+			/*if(inventory.size()>=50)
 			{
 				System.out.println("Stupid idiot you cannot add anymore items, do you think you could hold this much in real life? Geez man you gotta be sensical every now and again seriously. Honestly I woke up to have just a simple fun day at work and you go along and be all like\"hoho look at me I'm going to hold too many items\" and you just patronize use narrators that are doing the heavy lifting. Come on man, stop being so selfish and think about others for once in your life");
 				return;
-			}
+			}*/
 			inventory.add(sub);
 		}
 		else{
