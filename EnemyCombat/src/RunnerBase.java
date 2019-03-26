@@ -52,11 +52,11 @@ public class RunnerBase{
 		String playerName = input.nextLine();
 		printSlow("\n\n",100); printSlow(playerName + "! What A Stupid Name!\n\n",80);
 		printSlow("Now, What Is Your Fighting Style?\n", 80);
-		classSelect(classNames, flavorTexts, playerName);
+		Hero player = classSelect(classNames, flavorTexts, playerName);
 		
 	}
 	
-	public static String classSelect(String[] cNames, String[] fTexts, String pName) { // will return Character
+	public static String classSelect(String[] cNames, String[] fTexts, String pName) {
 		for(int i = 1; i < classNames.length + 1; i++) {
 			out.println("\t" + i + "  " + classNames[i-1]);
 			wait(170);
