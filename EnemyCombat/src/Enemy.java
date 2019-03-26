@@ -29,8 +29,8 @@ public class Enemy extends Character {
 	public int getDamage() {
 		return damage;
 	}
-	public String getName(){
-		return(name);
+	public String getName(){ 
+		return(name);  
 	}
 	public int getCurrHealth(){
 		return(currHealth);
