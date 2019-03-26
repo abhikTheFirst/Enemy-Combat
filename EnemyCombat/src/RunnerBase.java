@@ -16,7 +16,7 @@ public class RunnerBase{
 	
 	public static void runGame(){	
 		boolean Play = printStart();
-		
+		input.nextLine();
 		if(Play)
 			postStartText();
 	}
@@ -72,19 +72,15 @@ public class RunnerBase{
 		String ans = input.next();
 		
 		if(ans.equals("Y") || ans.equals("y")) {
-			
+			Hero player = new Hero{classNames[choose]};
 		}
-		else {
-			
+		else{
+			newScreen();
+			out.println("Choose Your Fighting Style -->");
+			return classSelect(classNames, name);
 		}
 		
-		//  in case of input exceptions
-		//	newScreen();
-		//  out.println("Choose Your Fighting Style -->");
-		//	return classSelect(classNames, name);
-		
-		//return player;
-		return ""; // fake!
+		return player;
 	}
 	
 	public static void printSlow(String input,int speed){
@@ -97,12 +93,7 @@ public class RunnerBase{
 	}
 	
 	public static void newScreen() {
-		out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		for(int i = 0; i < 10; i++){out.println("\n\n\n\n\n");}
 	}
 	
 	public static void wait(int time) {
