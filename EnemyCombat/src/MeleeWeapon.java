@@ -1,17 +1,10 @@
 /* SCRAPPED CLASS */
 /* SCRAPPED CLASS */
 /* SCRAPPED CLASS */
-/*public class Shortsword extends Weapon implements Modifiable, Sellable {
-	/* 
-	 * Shortswords are the most basic of weapons. Their sell prices are low.
-	 * Think of more characteristics of shortswords here (for instance variables):
-	 * 
-	 * NOTE: This class is to be scrapped and replaced for a refurbished "MeleeWeapon" class, as
-	 * shortswords are too specific for a simple game and don't have any different characteristics
-	 * from other melee weapons (for now)
-	 * All the code will be pretty much the same but the name will be changed to avoid confusion. Unfortunately I can't just change the name of the class and have it compile ok like in BlueJ.
-	 */
-	/*public Shortsword(String n, String r, int u, int w, double bD, int c, int l) {
+/*public class MeleeWeapon extends Weapon implements Modifiable, Sellable {
+	//  Tomis the tank engin
+
+	public MeleeWeapon(String n, String r, int u, int w, double bD, int c, int l) {
 		super(n, r, u, w, bD, c, l);
 		super.makeRandomIndeces();
 	}

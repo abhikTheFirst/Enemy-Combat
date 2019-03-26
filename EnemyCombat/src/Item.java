@@ -20,6 +20,22 @@ public abstract class Item implements Sellable {
 	 * obtain more than 1 weapon from a drop. 
 	 * The sell price is determined in the MeleeWeapon class itself that is factored by rarity, modifier, etc.
 	 * 
+	 * To-do for weapons:
+	 * Update weapon manual for constructing since it's now just Weapon (no melee or ranged)
+	 * Add warning for using getDamage() instead of getBaseDamage()
+	 * 
+	 * If we wanted to make the starting "stick" weapon the default weapon (or any weapon) it would be constructed as a:
+	 * new Weapon("Stick", "Common", 20, 1, 0.25, 4, 50, 65), in which the values are as follows:
+	 * 
+	 * "Stick" is the name of the weapon
+	 * "Common" is the rarity of the weapon
+	 * 20 is the amount of uses
+	 * 1 is the weight of the weapon
+	 * 0.25 is the weapon's base damage
+	 * 4 is the critical hit chance (%)
+	 * 50 is the loot chance from enemies (%)
+	 * 65 is the accuracy (%)
+	 * 
 	 * If we wanted to make a melee "stick" weapon the default weapon (or any weapon) it would be constructed as:
 	 * new MeleeWeapon("Stick", "Common", 20, 1, 0.25, 4, 50), in which:
 	 * "Stick" is the name of the weapon
@@ -52,7 +68,7 @@ public abstract class Item implements Sellable {
 	 * v v v v v v v v v v v v v v v v v v
 	 * 
 	 */
-	private int uses, weight, lootChance, minAmountDrops, maxAmountDrops;
+	private int uses, currentUses, weight, lootChance, minAmountDrops, maxAmountDrops;
 	private String name, rarity;
 	public abstract String getItemDescription();
 	public abstract int getSellPrice();
@@ -64,9 +80,13 @@ public abstract class Item implements Sellable {
 		lootChance = l;
 		minAmountDrops = mn;
 		maxAmountDrops = mx;
+		currentUses = uses;
 	}
 	public void setUses(int u) {
 		uses = u;
+	}
+	public void setCurrentUses(int cU) {
+		currentUses = u;
 	}
 	public void setWeight(int w) {
 		weight = w;
@@ -88,6 +108,9 @@ public abstract class Item implements Sellable {
 	}
 	public int getUses() {
 		return uses;
+	}
+	public int getCurrentUses() {
+		return currentUses;
 	}
 	public int getWeight() {
 		return weight;
