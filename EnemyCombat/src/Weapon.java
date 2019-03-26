@@ -66,40 +66,41 @@ public class Weapon extends Item implements Modifiable, Sellable {
 	public double getDamage() {
 		return baseDamage + (baseDamage * 0.01 * modifierEffect);
 	}
-	public void setBaseDamage(double bD) {
-		baseDamage = bD;
-	}
-	public double getBaseDamage() {
-		return baseDamage;
-	}
-	public void setCriticalChance(int c) {
-		criticalChance = c;
-	}
-	public int getCriticalChance() {
-		return criticalChance;
-	}
 	public String getModifierDescription() {
 		if(modifierEffect > 0) {
 			return modifierName + "weapon: " + "+" + modifierEffect + "% damage";
 		}
 		return modifierName + " weapon: " + "-" + modifierEffect + "% damage";
 	}
+	
+	public void setAccuracy(int a) {
+		accuracy = a;
+	}
+	public void setBaseDamage(double bD) {
+		baseDamage = bD;
+	}
+	public void setCriticalChance(int c) {
+		criticalChance = c;
+	}
 	public void setModifierEffect(int mE) {
 		modifierEffect = mE;
-	}
-	public int getModifierEffect() {
-		return modifierEffect;
 	}
 	public void setModiferName(String mN) { 
 		modifierName = mN;
 	}
-	public String getModifierName() {
-		return modifierName;
-	}
-	public void setAccuracy(int a) {
-		accuracy = a;
-	}
 	public int getAccuracy() {
 		return accuracy;
+	}
+	public double getBaseDamage() {
+		return baseDamage;
+	}
+	public int getCriticalChance() {
+		return criticalChance;
+	}
+	public int getModifierEffect() {
+		return modifierEffect;
+	}
+	public String getModifierName() {
+		return modifierName;
 	}
 }

@@ -19,11 +19,7 @@ public abstract class Item implements Sellable {
 	 * Note: minimum and maximum amount from drops passed to constructor is always 1, since you can't
 	 * obtain more than 1 weapon from a drop. 
 	 * The sell price is determined in the MeleeWeapon class itself that is factored by rarity, modifier, etc.
-	 * 
-	 * To-do for weapons:
-	 * Update weapon manual for constructing since it's now just Weapon (no melee or ranged)
-	 * Add warning for using getDamage() instead of getBaseDamage()
-	 * 
+	 *
 	 * If we wanted to make the starting "stick" weapon the default weapon (or any weapon) it would be constructed as a:
 	 * new Weapon("Stick", "Common", 20, 1, 0.25, 4, 50, 65), in which the values are as follows:
 	 * 
@@ -36,28 +32,8 @@ public abstract class Item implements Sellable {
 	 * 50 is the loot chance from enemies (%)
 	 * 65 is the accuracy (%)
 	 * 
-	 * If we wanted to make a melee "stick" weapon the default weapon (or any weapon) it would be constructed as:
-	 * new MeleeWeapon("Stick", "Common", 20, 1, 0.25, 4, 50), in which:
-	 * "Stick" is the name of the weapon
-	 * "Common" is the rarity
-	 * 20 is the amount of uses
-	 * 1 is the weight
-	 * 0.25 is the base damage
-	 * 4 is the critical hit chance (%)
-	 * 50 is the loot chance (%)
-	 * (And probably some more melee-specific characteristics that I cannot think of)
-	 * 
-	 * If we wanted to make a different weapon, say a ranged weapon (magic weapons might come later):
-	 * new RangedWeapon("Longbow", "Common", 30, 5, 5.0, 4, 25, 50, 5), in which:
-	 * "Longbow" is the name of the weapon
-	 * "Common" is the rarity
-	 * 30 is the amount of uses
-	 * 5 is the weight
-	 * 5.0 is the base damage
-	 * 4 is the critical hit chance (%)
-	 * 25 is the loot chance (%)
-	 * 50 is the max ammo capacity
-	 * 5 is the max range (might be scrapped depending on how the map works)
+	 * WARNING: do NOT use getBaseDamage() to obtain the weapon's damage. Use getDamage() instead, which returns a double
+	 * based on the modifier and base damage, to get a more accurate result.
 	 * 
 	 * 
 	 * HOW TO CONSTRUCT AN ITEM (POTION):
@@ -86,7 +62,7 @@ public abstract class Item implements Sellable {
 		uses = u;
 	}
 	public void setCurrentUses(int cU) {
-		currentUses = u;
+		currentUses = cU;
 	}
 	public void setWeight(int w) {
 		weight = w;
